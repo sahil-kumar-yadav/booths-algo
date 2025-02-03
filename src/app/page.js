@@ -1,8 +1,7 @@
 "use client"
 import { multiply } from '@/component/boothsAlgorithm';
-// import { multiplyBooth } from '@/component/boothsAlgorithm';
-// import { boothsAlgorithm } from '@/component/boothsAlgorithm';
 import { useState } from 'react';
+
 export default function Home() {
   const [factor1, setFactor1] = useState('');
   const [factor2, setFactor2] = useState('');
@@ -19,7 +18,7 @@ export default function Home() {
     
     <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
         <div className="flex flex-col space-y-2">
-            <label htmlFor="factor1" className="text-lg font-medium text-gray-700">Factor 1:</label>
+            <label htmlFor="factor1" className="text-lg font-medium text-gray-700">Multiplicand:</label>
             <input
                 id="factor1"
                 type="number"
@@ -32,7 +31,7 @@ export default function Home() {
         </div>
 
         <div className="flex flex-col space-y-2">
-            <label htmlFor="factor2" className="text-lg font-medium text-gray-700">Factor 2:</label>
+            <label htmlFor="factor2" className="text-lg font-medium text-gray-700">Multiplier:</label>
             <input
                 id="factor2"
                 type="number"
