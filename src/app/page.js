@@ -21,8 +21,9 @@ export default function Home() {
 
   return (
     <div className="max-w-4xl my-4 mx-auto p-8 bg-gradient-to-r from-indigo-900 via-purple-800 to-blue-800 shadow-xl rounded-lg relative overflow-hidden">
-      <h1 className="text-4xl font-semibold text-center text-white mb-8 tracking-tight">Booth's Algorithm</h1>
-
+      <h1 className="text-4xl font-semibold text-center text-white mb-4 tracking-tight">Booth's Algorithm</h1>
+      <h2 className="text-2xl font-semibold text-center text-white mb-8 tracking-tight">Project Under the guidance of Dr. Anirban Chatterjee </h2>
+      
       {/* Input Form */}
       <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
         <div className="flex flex-col space-y-2">
@@ -87,7 +88,7 @@ export default function Home() {
               <th className="py-3 px-6 text-left">Q</th>
               <th className="py-3 px-6 text-left">Q1</th>
               <th className="py-3 px-6 text-left">M</th>
-              <th className="py-3 px-6 text-left">Log</th>
+              <th className="py-3 px-6 text-left">Operations</th>
             </tr>
           </thead>
           <motion.tbody

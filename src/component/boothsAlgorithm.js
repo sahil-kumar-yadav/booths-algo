@@ -16,7 +16,7 @@ export function multiply(factor1, factor2) {
     let q1 = '0';
     let m = twosComplement(factor1, bitLength);
 
-    results.push({ a, q, q1, m, log: 'Populate Data' });
+    results.push({ a, q, q1, m, log: 'Intial value' });
 
     for (let i = 0; i < bitLength; i++) {
         if (q1 === '0' && q.substring(q.length - 1) === '1') {
@@ -26,7 +26,7 @@ export function multiply(factor1, factor2) {
             tempA = tempA - tempM;
             a = twosComplement(tempA, bitLength);
 
-            results.push({ a, q, q1, m, log: 'A = A - M' });
+            results.push({ a, q, q1, m, log: 'A = A - M  ∵Q(0)Q(-1) = 10' });
         } else if (q1 === '1' && q.substring(q.length - 1) === '0') {
             let tempA = parseInt(a, 2);
             let tempM = parseInt(m, 2);
@@ -35,14 +35,14 @@ export function multiply(factor1, factor2) {
             a = twosComplement(tempA, bitLength);
             a = a.substring(a.length - bitLength);
 
-            results.push({ a, q, q1, m, log: 'A = A + M' });
+            results.push({ a, q, q1, m, log: 'A = A + M  ∵Q(0)Q(-1) = 01' });
         }
 
         q1 = q.substring(q.length - 1);
         q = a.charAt(a.length - 1) + q.substring(0, q.length - 1);
         a = a.charAt(0) + a.substring(0, a.length - 1);
 
-        results.push({ a, q, q1, m, log: 'Shift' });
+        results.push({ a, q, q1, m, log: 'ASR' });
     }
 
     return results;
