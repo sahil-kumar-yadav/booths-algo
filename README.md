@@ -1,56 +1,127 @@
+# ⚙️ Booth's Algorithm Visualizer - Built with Next.js
 
-# Booth's Algorithm - Next.js Website
+![Booth's Algorithm Banner](https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Booth%27s_algorithm.svg/1200px-Booth%27s_algorithm.svg.png)
 
-## Description
-
-This is a **Booth’s Algorithm** implementation website built with **Next.js**, designed to help users understand and visualize the binary multiplication process for signed integers. Booth's Algorithm is an efficient way to multiply binary numbers, especially for numbers with mixed signs. This project helps users learn the algorithm's inner workings with a simple, interactive interface.
-
-## Working
-
-Booth's Algorithm works by processing the binary digits of two numbers, comparing them and shifting them step by step to compute the result. Here's a quick breakdown of the algorithm's mechanism:
-
-1. **Initial Setup**: You start with two binary numbers. One is the multiplier, and the other is the multiplicand.
-2. **Sign Extension**: Booth's Algorithm uses a signed binary number representation. Each number's sign is preserved using **sign extension**.
-3. **Steps**:
-   - Look at the last bit of the current number (known as the *Q0* bit) and compare it with the previous bit (the *Q-1* bit).
-   - Based on the comparison, either:
-     - Add the multiplicand to the accumulator.
-     - Subtract the multiplicand from the accumulator.
-     - Perform a simple shift operation.
-4. **Repetition**: The process continues for a set number of steps (equal to the number of bits in the binary numbers).
-
-After performing all the steps, the result will be available as the product of the multiplication in binary form.
-
-## Algorithm Steps
-
-1. **Input**: Two binary numbers (multiplicand and multiplier).
-2. **Initialization**: 
-   - Set an accumulator (A) to 0.
-   - Set the multiplier (Q) and a previous bit (Q-1) to 0.
-3. **Repeat** for `n` cycles (number of bits in the binary numbers):
-   - Check the last bit of the multiplier (`Q0`) and the previous bit (`Q-1`).
-   - Perform actions based on the combination of these two bits:
-     - If `Q0 = 0` and `Q-1 = 1`, subtract the multiplicand from the accumulator.
-     - If `Q0 = 1` and `Q-1 = 0`, add the multiplicand to the accumulator.
-     - If `Q0 = Q-1`, just shift the entire number (accumulator and multiplier).
-4. **Result**: After all cycles, the accumulator contains the final result of the multiplication in binary form.
-
-## Features
-
-- **Visual Representation**: Step-by-step animation of how the algorithm works.
-- **Interactive Input**: Input any two binary numbers to see the process and result.
-- **User-Friendly UI**: Easy-to-understand interface for both beginners and experienced users in binary arithmetic.
-- **Real-Time Calculation**: Instant results and step-by-step explanations.
-
-## Tech Stack
-
-- **Next.js**: React-based framework used to build the website.
-- **React**: For the front-end user interface.
-- **CSS/SCSS**: For styling the application with a responsive design.
-- **JavaScript**: For implementing the Booth’s Algorithm and managing interactive elements.
-
-## Contribution
-
-If you would like to contribute to this project, feel free to submit an issue, fork the repository, and create a pull request. Contributions are always welcome!
+> **A powerful visual tool to learn and simulate Booth’s Algorithm for signed binary multiplication.**
 
 ---
+
+## 📖 Description
+
+Welcome to the **Booth’s Algorithm Visualizer**, an educational web application built using **Next.js** that allows users to explore and understand the inner workings of Booth's binary multiplication algorithm. Through an intuitive UI and real-time visualizations, users can step through the algorithm and see how binary multiplication happens behind the scenes.
+
+---
+
+## 🚀 Live Demo
+
+🔗 [View Live Website](https://your-deployment-link.com)
+📂 [View the Repository](https://github.com/your-repo-link)
+
+---
+
+## 🧠 What is Booth's Algorithm?
+
+Booth's Algorithm is an efficient method for multiplying **signed binary numbers** in **two's complement** representation.
+
+### 👣 Algorithm Workflow
+
+1. **Initialize**
+
+   * Accumulator `A` = 0
+   * Multiplier `Q` = binary input
+   * Multiplicand `M` = binary input
+   * Previous bit `Q-1` = 0
+
+2. **Repeat** for `n` steps:
+
+   * Analyze `Q0` and `Q-1`
+
+     * `10`: Add `M` to `A`
+     * `01`: Subtract `M` from `A`
+     * `00` or `11`: No operation
+   * Perform an **Arithmetic Right Shift** on `A`, `Q`, and `Q-1`
+
+3. **Result**: After `n` cycles, concatenate `A` and `Q` to get the final binary product.
+
+---
+
+## 💡 Example
+
+### Input:
+
+* **Multiplicand (M)**: `0110` (6)
+* **Multiplier (Q)**: `1101` (-3 in two’s complement)
+
+### Output:
+
+```
+Step-by-step execution...
+Final Result (Binary): 11101110
+Final Result (Decimal): -18
+```
+
+> The algorithm dynamically handles signed binary multiplication using arithmetic shifts and conditional operations based on bit comparisons.
+
+---
+
+## ✨ Features
+
+| Feature                    | Description                                                     |
+| -------------------------- | --------------------------------------------------------------- |
+| 🎞️ Step-by-Step Animation | Visual walkthrough of each cycle of Booth’s algorithm.          |
+| 🎯 Real-Time Input         | Enter your own binary numbers and see instant calculations.     |
+| 🖥️ Interactive UI         | Built for ease of understanding for both beginners and experts. |
+| 📱 Responsive Design       | Mobile and desktop friendly.                                    |
+
+---
+
+## 🛠️ Tech Stack
+
+| Tech          | Description                             |
+| ------------- | --------------------------------------- |
+| 🧪 Next.js    | React-based framework for SSR & routing |
+| ⚛️ React      | For building the dynamic UI components  |
+| 🎨 SCSS/CSS   | Styling with responsive design support  |
+| 📐 JavaScript | Algorithm logic and state management    |
+
+---
+
+## 📸 Screenshots
+
+### 🎬 Input View
+
+![Input Screenshot](https://via.placeholder.com/600x300.png?text=Input+Screen)
+
+### 🔄 Step-by-Step Visualization
+
+![Steps Screenshot](https://via.placeholder.com/600x300.png?text=Step+Visualization)
+
+---
+
+## 🤝 Contribution
+
+We welcome all contributions! 🙌
+
+1. Fork the repository
+2. Create a new branch
+3. Submit a pull request
+
+📢 **Issues and suggestions** are also highly appreciated!
+
+---
+
+## 📜 License
+
+MIT License © [Your Name](https://github.com/your-profile)
+
+---
+
+## 🧭 Navigate
+
+* [x] Booth’s Algorithm Visual Explanation
+* [x] Binary Input Conversion
+* [x] Signed Multiplication Handling
+* [x] Educational Use Case
+
+---
+
